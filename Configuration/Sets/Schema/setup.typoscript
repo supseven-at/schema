@@ -1,0 +1,7 @@
+page {
+    10 {
+        dataProcessing {
+            1787831927 = schema-processor
+        }
+    }
+}
