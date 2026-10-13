@@ -12,7 +12,6 @@ use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
         'tx_schema_schema_type' => [
             'label'       => $languageFileBePrefix . 'field.pages.tx_schema_schema_type.label',
             'description' => $languageFileBePrefix . 'field.pages.tx_schema_schema_type.description',
-            'displayCond' => 'FIELD:doktype:=:' . PageRepository::DOKTYPE_DEFAULT,
             'config'      => [
                 'type'       => 'select',
                 'renderType' => 'selectSingle',
