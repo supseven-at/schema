@@ -88,14 +88,17 @@ class SchemaOrgService
     private function buildGraph(mixed $items, SchemaContext $context): array
     {
         $graph = [];
+        $isContentElement = is_iterable($items) && isset($items['CType']);
 
-        foreach ($this->builders as $builder) {
-            if (!$builder instanceof SiteSettingsSchemaBuilder) {
-                continue;
-            }
+        if (!$isContentElement) {
+            foreach ($this->builders as $builder) {
+                if (!$builder instanceof SiteSettingsSchemaBuilder) {
+                    continue;
+                }
 
-            foreach ($builder->buildAll($context) as $schemaItem) {
-                $graph[] = $schemaItem;
+                foreach ($builder->buildAll($context) as $schemaItem) {
+                    $graph[] = $schemaItem;
+                }
             }
         }
 
